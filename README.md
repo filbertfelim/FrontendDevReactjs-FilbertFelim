@@ -4,3 +4,5 @@
 How to start project
 - `yarn install`
 - `yarn dev`
+
+Production link : https://sekawanmedia.netlify.app/
