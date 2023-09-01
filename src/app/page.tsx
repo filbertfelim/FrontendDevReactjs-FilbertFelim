@@ -13,7 +13,7 @@ import {
   DropdownMenuRadioItem,
 } from "@/components/ui/dropdown-menu";
 
-function RestaurantApp() {
+export default function RestaurantApp() {
   const [price, setPrice] = React.useState("");
   const [isOpen, setIsOpen] = React.useState("");
   const [restaurants, setRestaurants] = React.useState([]);
@@ -304,5 +304,3 @@ function RestaurantApp() {
     </>
   );
 }
-
-export default RestaurantApp;
