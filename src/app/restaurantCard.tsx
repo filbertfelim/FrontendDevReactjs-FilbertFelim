@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { AiFillStar } from "react-icons";
 import {
   Select,
   SelectContent,
@@ -43,8 +42,8 @@ interface Props {
 }
 
 export default function RestaurantCard({ props }: Props) {
-  const [details, setDetails] = React.useState({});
-  const [photo, setPhoto] = React.useState({});
+  const [details, setDetails] = React.useState<any>({});
+  const [photo, setPhoto] = React.useState<any>({});
   const price = (parseInt(props.pictureId) % 4) + 1;
   const isOpen = (parseInt(props.pictureId) % 2) + 1 == 1 ? "open" : "closed";
   const apiUrl = "https://restaurant-api.dicoding.dev";
@@ -245,14 +244,16 @@ export default function RestaurantCard({ props }: Props) {
                       </DialogDescription>
                     </DialogHeader>
                     {details.customerReviews ? (
-                      details.customerReviews.map((filter, index) => {
-                        return (
-                          <RestaurantReview
-                            key={filter}
-                            props={filter}
-                          ></RestaurantReview>
-                        );
-                      })
+                      details.customerReviews.map(
+                        (filter: any | null | undefined, index: any) => {
+                          return (
+                            <RestaurantReview
+                              key={filter}
+                              props={filter}
+                            ></RestaurantReview>
+                          );
+                        }
+                      )
                     ) : (
                       <></>
                     )}

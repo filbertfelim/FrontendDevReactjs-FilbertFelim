@@ -16,9 +16,9 @@ import {
 export default function RestaurantApp() {
   const [price, setPrice] = React.useState("");
   const [isOpen, setIsOpen] = React.useState("");
-  const [restaurants, setRestaurants] = React.useState([]);
+  const [restaurants, setRestaurants] = React.useState<any[]>([]);
   const [category, setCategory] = React.useState(new Array<string>());
-  const [restaurantDetails, setRestaurantDetails] = React.useState([]);
+  const [restaurantDetails, setRestaurantDetails] = React.useState<any[]>([]);
   const [activeCategory, setActiveCategory] = React.useState("");
   const apiUrl = "https://restaurant-api.dicoding.dev";
 
